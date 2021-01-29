@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android">-->
+    <!--<item>-->
+        <!--<shape>-->
+
+            <!--&lt;!&ndash;<padding&ndash;&gt;-->
+                <!--&lt;!&ndash;android:top="15dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:left="5dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:right="5dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:bottom="15dp"/>&ndash;&gt;-->
+            <!--<size-->
+                <!--android:width="40dp"-->
+                <!--android:height="10dp" />-->
+            <!--<solid android:color="#0000" />-->
+        <!--</shape>-->
+    <!--</item>-->
+    <!--<item>-->
+
+        <!--<shape>-->
+            <!--<corners android:radius="24dp" />-->
+
+
+            <!--<solid android:color="#E6EAF0" />-->
+        <!--</shape>-->
+    <!--</item>-->
+<!--</layer-list>-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item android:state_checked="true" android:drawable="@mipmap/switch_track_on_" />
+    <item  android:drawable="@mipmap/switch_track_off_" />
+</selector>
