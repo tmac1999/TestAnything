@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.dianping.logan.Logan
 import com.dianping.logan.LoganConfig
 import com.dianping.logan.SendLogRunnable
+import com.fatangare.logcatviewer.utils.LogcatViewer
 import com.zy.logcat.LogCatControl
 import java.io.File
 import java.text.SimpleDateFormat
@@ -33,12 +34,14 @@ class MainActivity : AppCompatActivity() {
             //                Toast.makeText(MainActivity.this,"asdasdasd",Toast.LENGTH_LONG).show();
 //            generateLog()
             //显示dialog
-            LogCatControl.getBuilder(this)
-                    .setTitle("自定义标题")
-                    .setSearchContent("自定义搜索内容")
-                    .setSearchTag("自定义Tag")
-                    .setShowGrade(3) //设置显示级别:0 所有，1 系统，2 警告,3 错误
-                    .show();
+//            LogCatControl.getBuilder(this)
+//                    .setTitle("自定义标题")
+//                    .setSearchContent("自定义搜索内容")
+//                    .setSearchTag("自定义Tag")
+//                    .setShowGrade(3) //设置显示级别:0 所有，1 系统，2 警告,3 错误
+//                    .show();
+            LogcatViewer.showLogcatLoggerView(this);
+
         }
         val dates = getDates(1)
         findViewById<View>(R.id.getLog).setOnClickListener {
@@ -78,12 +81,16 @@ class MainActivity : AppCompatActivity() {
                 super.run()
                 while (true) {
                     Thread.sleep(1000)
-                    Log.e("makeText", "makeText" + count)
+                    Log.w("makeText", "makeText" + count)
                 }
 //                Thread.sleep(1000)
 //                Log.w("makeText","makeText"+count)
             }
         }.start()
+//        while (true) {
+//            Thread.sleep(1000)
+//            Log.w("makeText", "makeText" + count)
+//        }
     }
 
     public fun generateLog() {
