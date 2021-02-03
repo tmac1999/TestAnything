@@ -1,0 +1,37 @@
+apply plugin: 'maven'
+//读取第一个配置文件 maven_user.properties
+def releaseRepoUrl = "http://maven.aixuexi.com:8081/nexus/content/repositories/releases"
+//读取第二个配置文件 maven_pom.properties
+def pom_name = "android"
+def pom_description = "fabric"
+def pom_group = "io.fabric.tools"
+def pom_artifact_id = "gradle"
+def pom_packaging = "jar"
+
+
+def repoUrl
+def pom_version
+
+uploadArchives {
+    repoUrl= releaseRepoUrl
+    pom_version = "1.29.0"
+    repositories.mavenDeployer {
+        repository(id: "nexus", url: repoUrl){
+            authentication(userName: "admin", password: "admin123")
+        }
+
+        pom.project {
+            name pom_name
+            description pom_description
+            url repoUrl
+            groupId pom_group
+            artifactId pom_artifact_id
+            version pom_version
+            packaging pom_packaging
+        }
+    }
+}
+
+artifacts {
+    archives file: file('libs/gradle-1.29.0.jar'), name: 'result', type: 'jar'
+}

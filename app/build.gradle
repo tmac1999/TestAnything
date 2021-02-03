@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-
+apply from: 'mavenUpload.gradle'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
